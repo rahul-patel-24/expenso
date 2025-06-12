@@ -6,7 +6,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { CategoryForm } from "./CategoryForm";
-import { useCategoryForm } from "@/hooks/auth/useCategoryForm";
+import { useCategoryForm } from "@/hooks/category/useCategoryForm";
 import type { CategoryModalProps } from "@/types/category";
 
 /**

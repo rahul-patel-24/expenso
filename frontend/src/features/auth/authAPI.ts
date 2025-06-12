@@ -1,42 +1,41 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const authAPI = createApi({
-  reducerPath: 'authAPI',
+  reducerPath: "authAPI",
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:5000/api',
-    credentials: 'include', 
+    baseUrl: import.meta.env.VITE_API_URL,
+    credentials: "include",
   }),
   endpoints: (builder) => ({
     login: builder.mutation({
       query: (credentials) => ({
-        url: 'auth/login',
-        method: 'POST',
+        url: "auth/login",
+        method: "POST",
         body: credentials,
       }),
     }),
     signup: builder.mutation({
       query: (credentials) => ({
-        url: 'auth/signup',
-        method: 'POST',
+        url: "auth/signup",
+        method: "POST",
         body: credentials,
       }),
     }),
     logout: builder.mutation({
       query: () => ({
-        url: 'auth/logout',
-        method: 'POST',
+        url: "auth/logout",
+        method: "POST",
       }),
     }),
     me: builder.query({
-      query: () => 'auth/me',
-      
+      query: () => "auth/me",
     }),
   }),
-})
+});
 
 export const {
   useLoginMutation,
   useLogoutMutation,
   useMeQuery,
-  useSignupMutation
-} = authAPI
+  useSignupMutation,
+} = authAPI;

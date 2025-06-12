@@ -2,7 +2,6 @@ import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "./Sidebar";
 import { Header } from "./Header";
 import { Outlet } from "react-router-dom";
-import { Toaster } from "@/components/ui/sonner";
 
 /**
  * @description
@@ -20,7 +19,7 @@ export const AppLayout = () => {
           <main className="flex-1 p-4 overflow-y-auto bg-background text-foreground">
             <Outlet /> 
           </main>
-          <Toaster />
+          {/* <Toaster /> */}
         </div>
       </div>
     </SidebarProvider>
